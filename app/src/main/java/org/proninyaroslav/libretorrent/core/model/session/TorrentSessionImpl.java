@@ -132,8 +132,8 @@ public class TorrentSessionImpl extends SessionManager
     private static final int[] pieceSize = {0, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768};
     /* Possible torrent versions to create. Zero is hybrid */
     private static final int[] torrentVersions = {0, 1, 2};
-    private static final String PEER_FINGERPRINT = "Lr"; /* called peer id */
-    private static final String USER_AGENT = "LibreTorrent %s";
+    private static final String PEER_FINGERPRINT = "qB"; /* called peer id */
+    private static final String USER_AGENT = "qBittorrent/4.3.8";
 
     private final InnerListener innerListener;
     private final ConcurrentLinkedQueue<TorrentEngineListener> listeners = new ConcurrentLinkedQueue<>();
@@ -847,7 +847,7 @@ public class TorrentSessionImpl extends SessionManager
                     version[0], version[1], version[2], 0);
             sp.set_str(settings_pack.string_types.peer_fingerprint.swigValue(), fingerprint);
 
-            String userAgent = String.format(USER_AGENT, Utils.getAppVersionNumber(versionName));
+            String userAgent = USER_AGENT;
             sp.set_str(settings_pack.string_types.user_agent.swigValue(), userAgent);
 
             Log.i(TAG, "Peer fingerprint: " + sp.get_str(settings_pack.string_types.peer_fingerprint.swigValue()));
