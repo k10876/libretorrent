@@ -71,3 +71,6 @@ captures/
 
 # Android NDK build stuff
 .externalNativeBuild
+
+# VS Code
+.vscode/
