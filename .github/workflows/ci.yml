@@ -1,7 +1,7 @@
 name: CI
 
 on:
-    - workflow_dispatch: {}
+  - workflow_dispatch: {}
 
 env:
   ANDROID_COMPILE_SDK: "34"
